@@ -16,6 +16,8 @@
 - [贡献指南](#贡献指南)
 - [许可证](#许可证)
 
+
+
 ## 🎯 项目概述
 
 SimpleShare是一个多租户（SaaS）化的内容分享平台，具有以下核心特性：
@@ -25,6 +27,20 @@ SimpleShare是一个多租户（SaaS）化的内容分享平台，具有以下�
 - **现代化界面**：基于Vue 3 + Element Plus的响应式设计
 - **强大的编辑器**：集成TipTap富文本编辑器，支持Markdown和富文本
 - **灵活的权限系统**：基于角色的访问控制（RBAC）
+
+## 项目预览
+|  |  |
+| ---- | ---- |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/1.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/2.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/3.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/4.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/5.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/6.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/7.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/8.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/9.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/10.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/11.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/12.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/13.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/14.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/15.png" width="45%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/16.png" width="45%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/17.png" width="45%"> |  |
+
 
 ## 🏗️ 技术架构
 
@@ -268,60 +284,6 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-### Docker部署
-
-我们提供完整的 docker-compose 与脚本，既可以一键构建/启动整套服务，也可以生成阿里云镜像供客户直接 `docker run` 使用。更多详情请参阅 [DOCKER_GUIDE.md](DOCKER_GUIDE.md) 与 [QUICK_DEPLOY.md](QUICK_DEPLOY.md)。
-
-#### 方案 A：一键构建并启动（含 MySQL/Redis）
-1. 复制并修改环境变量：
-   ```bash
-   cp docker/.env.example docker/.env
-   ```
-2. 运行脚本（Windows 使用 `docker-deploy.bat`）：
-   ```bash
-   ./docker-deploy.sh --tag v1.0.0
-   ```
-   - 脚本会依次构建前后端镜像、自动生成 `docker/.env` 并执行 `docker compose up -d`
-   - 若需要推送镜像，追加 `--push`
-3. 浏览器访问 `http://localhost:80`，即可打开门户站点；管理 API 监听 `http://localhost:8081/api`
-
-#### 方案 B：推送至阿里云镜像仓库
-1. 设置镜像信息（可写入 `.env` 或直接导出环境变量）：
-   ```bash
-   export ALI_NAMESPACE=your-namespace
-   export ALI_IMAGE_TAG=v1.0.0
-   docker login registry.cn-shanghai.aliyuncs.com
-   ```
-2. 构建并推送（如无需本地 compose，可追加 `--skip-compose`）：
-   ```bash
-   ./docker-deploy.sh --push --skip-compose --tag v1.0.0
-   ```
-3. 将以下命令发送给客户，即可一键启动容器并访问 `http://localhost:80`：
-   ```bash
-   # 后端（请先准备好数据库/Redis，并替换相关地址）
-   docker run -d \
-     -p 8081:8081 \
-     --restart always \
-     -v /opt/simpleshare/uploads:/app/data/uploads \
-     -e SPRING_PROFILES_ACTIVE=prod \
-     -e SPRING_DATASOURCE_URL="jdbc:mysql://mysql-host:3306/simple-share?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai" \
-     -e SPRING_DATASOURCE_USERNAME=simpleshare \
-     -e SPRING_DATASOURCE_PASSWORD=Simpleshare@User1 \
-     -e REDIS_HOST=redis-host \
-     -e REDIS_PORT=6379 \
-     --name simpleshare-backend \
-     registry.cn-shanghai.aliyuncs.com/your-namespace/simpleshare-backend:v1.0.0
-
-   # 前端
-   docker run -d \
-     -p 80:80 \
-     --restart always \
-     -e BACKEND_HOST=<backend-service-host> \
-     -e BACKEND_PORT=8081 \
-     --name simpleshare-portal \
-     registry.cn-shanghai.aliyuncs.com/your-namespace/simpleshare-frontend:v1.0.0
-   ```
-   前端容器内置 Nginx，并自动将 `/api` 请求代理到配置的后端地址。
 
 ## ⚙️ 环境配置
 
@@ -405,14 +367,9 @@ http://localhost:8080/doc.html
 
 ## 📞 联系方式
 
-### 微信技术交流群：
-| 微信号 | 二维码 |
-| ------ | ------ |
-| xmgocde | ![微信技术交流群1](https://github.com/xmgcode88/simple-share/blob/main/images/xmgcode.png) |
-| xmgocde88 | ![微信技术交流群2](https://github.com/xmgcode88/simple-share/blob/main/images/xmgcode88.png) |
-
-### QQ群：
-![QQ群](https://github.com/xmgcode88/simple-share/blob/main/images/990035173.png =150x150)
-
+### 交流群：
+<img src="https://github.com/xmgcode88/simple-share/blob/main/images/xmgcode.png" width="100" title="微信1：xmgocde">
+<img src="https://github.com/xmgcode88/simple-share/blob/main/images/xmgcode88.png" width="100" title="微信2：xmgocde88">
+<img src="https://github.com/xmgcode88/simple-share/blob/main/images/990035173.png" width="100" title="QQ群二维码">
 
 **© 2025 小码哥. 保留所有权利.**
