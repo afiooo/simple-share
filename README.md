@@ -1,6 +1,6 @@
 # SimpleShare - 简享
 
-一个基于多租户架构的现代化内容分享平台，支持SaaS模式部署，为企业和组织提供专属的内容分享服务。
+一个参考飞书编辑器的现代化风格内容分享平台，基于Spring Boot + Vue3构建，提供所见即所得的文本编辑体验，支持多租户SaaS架构、内容权限管控、复制权限控制、会员内容管理、AI教学、文章审核、系统配置等模块，具备完整的用户体系和响应式设计。
 
 ## 📋 目录
 
@@ -31,15 +31,15 @@ SimpleShare是一个多租户（SaaS）化的内容分享平台，具有以下�
 ## 项目预览
 |  |  |
 | ---- | ---- |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/1.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/2.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/3.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/4.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/5.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/6.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/7.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/8.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/9.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/10.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/11.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/12.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/13.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/14.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/15.png" width="80%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/16.png" width="80%"> |
-| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/17.png" width="80%"> |  |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/1.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/2.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/3.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/4.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/5.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/6.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/7.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/8.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/9.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/10.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/11.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/12.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/13.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/14.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/15.png" width="90%"> | <img src="https://github.com/xmgcode88/simple-share/blob/main/images/16.png" width="90%"> |
+| <img src="https://github.com/xmgcode88/simple-share/blob/main/images/17.png" width="90%"> |  |
 
 
 ## 🏗️ 技术架构
